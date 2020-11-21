@@ -21,10 +21,10 @@ public class HandleTruthTest {
         PrintStream ps = new PrintStream(baos);
 
         for (int i = 0; i < inputs.length; i++) {
-            for (TreeMap<Integer, Set<String>> testCase : testCases) {
+            //for (TreeMap<Integer, Set<String>> testCase : testCases) {
                 TreeMap<Integer, Set<String>> actual = HandleTruth.wordCount(inputs[i], ps);
-                assertEquals(testCase, actual);
-            }
+                assertEquals(testCases.get(i), actual);
+            //}
         }
 
 //        TreeMap<Integer, Set<String>> expected = new TreeMap<>(Collections.reverseOrder());
@@ -52,23 +52,37 @@ public class HandleTruthTest {
 
         TreeMap<Integer, Set<String>> map = new TreeMap<>(Collections.reverseOrder());
         map.put(1, Collections.singleton(""));
-
         testCases.add(map);
+
+        TreeMap<Integer, Set<String>> map1 = new TreeMap<>(Collections.reverseOrder());
+        map1.put(1, Collections.singleton("one"));
+        testCases.add(map1);
+
+        TreeMap<Integer, Set<String>> map2 = new TreeMap<>(Collections.reverseOrder());
+        HashSet<String> map2Set = new HashSet<>();
+        String[] arr = new String[]{"how", "are", "duplicate", "many", "any"};
+        for (String s : arr) {
+            map2Set.add(s);
+        }
+
+        map2.put(2, Collections.singleton("words"));
+        map2.put(1, map2Set);
+        testCases.add(map2);
 
         return testCases;
     };
 
     public static void main(String[] args) {
+//        PrintStream toScreen = System.out;
+//        HandleTruth.wordCount("son we live in a world that has walls and those walls have to be guarded by men with guns whos gonna do it you you lieutenant weinberg i have a greater responsibility than you can possibly fathom you weep for santiago and you curse the marines you have that luxury you have the luxury of not knowing what i know that santiagos death while tragic probably saved lives and my existence while grotesque and incomprehensible to you saves lives you dont want the truth because deep down in places you dont talk about at parties you want me on that wall you need me on that wall we use words like honor code loyalty we use these words as the backbone of a life spent defending something you use them as a punchline i have neither the time nor the inclination to explain myself to a man who rises and sleeps under the blanket of the very freedom that i provide and then questions the manner in which i provide it i would rather you just said thank you and went on your way otherwise i suggest you pick up a weapon and stand a post either way i dont give a damn what you think you are entitled to", toScreen);
+//        System.out.println();
+//
+//        toScreen = System.out;
+//        HandleTruth.wordCount("how many words are any words duplicate", toScreen);
+//        System.out.println();
+
         PrintStream toScreen = System.out;
-        HandleTruth.wordCount("son we live in a world that has walls and those walls have to be guarded by men with guns whos gonna do it you you lieutenant weinberg i have a greater responsibility than you can possibly fathom you weep for santiago and you curse the marines you have that luxury you have the luxury of not knowing what i know that santiagos death while tragic probably saved lives and my existence while grotesque and incomprehensible to you saves lives you dont want the truth because deep down in places you dont talk about at parties you want me on that wall you need me on that wall we use words like honor code loyalty we use these words as the backbone of a life spent defending something you use them as a punchline i have neither the time nor the inclination to explain myself to a man who rises and sleeps under the blanket of the very freedom that i provide and then questions the manner in which i provide it i would rather you just said thank you and went on your way otherwise i suggest you pick up a weapon and stand a post either way i dont give a damn what you think you are entitled to", toScreen);
-        System.out.println();
-
-        toScreen = System.out;
         HandleTruth.wordCount("how many words are any words duplicate", toScreen);
-        System.out.println();
-
-        toScreen = System.out;
-        HandleTruth.wordCount("", toScreen);
         System.out.println();
     }
 }
