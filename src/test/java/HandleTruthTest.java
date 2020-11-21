@@ -43,48 +43,30 @@ public class HandleTruthTest {
 
         // test case 2
         TreeMap<Integer, Set<String>> map2 = new TreeMap<>(Collections.reverseOrder());
-        HashSet<String> map2Set = new HashSet<>();
-        String[] arr = new String[]{"how", "are", "duplicate", "many", "any"};
-        map2Set.addAll(Arrays.asList(arr));
         map2.put(2, Collections.singleton("words"));
-        map2.put(1, map2Set);
+        map2.put(1, new HashSet<>(Arrays.asList("how", "are", "duplicate", "many", "any")));
         testCases.add(map2);
 
         // test case 3
         TreeMap<Integer, Set<String>> map3 = new TreeMap<>(Collections.reverseOrder());
-        HashSet<String> map3Set1 = new HashSet<>();
-        String[] set1 = new String[]{"a", "and", "i"};
-        map3Set1.addAll(Arrays.asList(set1));
-        HashSet<String> map3Set2 = new HashSet<>();
-        map3Set2.addAll(Arrays.asList(new String[]{"have", "to"}));
-        HashSet<String> map3Set3 = new HashSet<>();
-        map3Set3.addAll(Arrays.asList(new String[]{"in", "use", "of", "dont", "we", "on"}));
-        HashSet<String> map3Set4 = new HashSet<>();
-        map3Set4.addAll(Arrays.asList(new String[]{"lives", "want", "words", "it", "while", "way", "as", "walls", "what", "provide", "me", "luxury", "wall"}));
-        HashSet<String> map3Set5 = new HashSet<>();
-        map3Set5.addAll(Arrays.asList(new String[]{"explain", "very", "guns", "saved", "lieutenant", "about", "your", "these", "saves", "would", "pick", "fathom", "grotesque", "incomprehensible", "because", "greater", "give", "sleeps", "went", "loyalty", "myself", "them", "then", "something", "at", "knowing", "santiago", "curse", "weinberg", "entitled", "whos", "be", "probably", "world", "freedom", "responsibility", "are", "by", "tragic", "backbone", "man", "stand", "inclination", "think", "gonna", "suggest", "places", "thank", "under", "punchline", "honor", "existence", "defending", "questions", "do", "manner", "down", "either", "son", "post", "than", "talk", "has", "up", "those", "possibly", "which", "otherwise", "need", "like", "my", "parties", "know", "santiagos", "rises", "who", "deep", "code", "death", "rather", "for", "weep", "life", "nor", "guarded", "can", "weapon", "not", "men", "said", "just", "live", "spent", "damn", "with", "truth", "marines", "neither", "time", "blanket"}));
         map3.put(18, Collections.singleton("you"));
         map3.put(9, Collections.singleton("the"));
-        map3.put(8, map3Set1);
+        map3.put(8, new HashSet<>(Arrays.asList("a", "and", "i")));
         map3.put(6, Collections.singleton("that"));
-        map3.put(5, map3Set2);
-        map3.put(3, map3Set3);
-        map3.put(2, map3Set4);
-        map3.put(1, map3Set5);
+        map3.put(5, new HashSet<>(Arrays.asList("have", "to")));
+        map3.put(3, new HashSet<>(Arrays.asList("in", "use", "of", "dont", "we", "on")));
+        map3.put(2, new HashSet<>(Arrays.asList("lives", "want", "words", "it", "while", "way", "as", "walls", "what", "provide", "me", "luxury", "wall")));
+        map3.put(1, new HashSet<>(Arrays.asList("explain", "very", "guns", "saved", "lieutenant", "about", "your", "these", "saves", "would", "pick", "fathom", "grotesque", "incomprehensible", "because", "greater", "give", "sleeps", "went", "loyalty", "myself", "them", "then", "something", "at", "knowing", "santiago", "curse", "weinberg", "entitled", "whos", "be", "probably", "world", "freedom", "responsibility", "are", "by", "tragic", "backbone", "man", "stand", "inclination", "think", "gonna", "suggest", "places", "thank", "under", "punchline", "honor", "existence", "defending", "questions", "do", "manner", "down", "either", "son", "post", "than", "talk", "has", "up", "those", "possibly", "which", "otherwise", "need", "like", "my", "parties", "know", "santiagos", "rises", "who", "deep", "code", "death", "rather", "for", "weep", "life", "nor", "guarded", "can", "weapon", "not", "men", "said", "just", "live", "spent", "damn", "with", "truth", "marines", "neither", "time", "blanket")));
         testCases.add(map3);
 
         // test case 4
         TreeMap<Integer, Set<String>> map4 = new TreeMap<>(Collections.reverseOrder());
-        HashSet<String> map4Set1 = new HashSet<>();
-        map4Set1.addAll(Arrays.asList(new String[]{"bus", "the"}));
-        HashSet<String> map4Set2 = new HashSet<>();
-        map4Set2.addAll(Arrays.asList(new String[]{"jack", "and", "ben", "waited", "for", "at", "station"}));
-        map4.put(2, map4Set1);
-        map4.put(1, map4Set2);
+        map4.put(2, new HashSet<>(Arrays.asList("bus", "the")));
+        map4.put(1, new HashSet<>(Arrays.asList("jack", "and", "ben", "waited", "for", "at", "station")));
         testCases.add(map4);
 
         return testCases;
-    };
+    }
 
     public static void main(String[] args) {
         PrintStream toScreen = System.out;
